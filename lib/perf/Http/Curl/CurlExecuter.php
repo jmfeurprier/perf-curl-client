@@ -19,6 +19,26 @@ class CurlExecuter
     /**
      *
      *
+     * @return CurlExecuter
+     */
+    public static function createDefault()
+    {
+        return self::createBuilder()->build();
+    }
+
+    /**
+     *
+     *
+     * @return CurlExecuterBuilder
+     */
+    public static function createBuilder()
+    {
+        return new CurlExecuterBuilder();
+    }
+
+    /**
+     *
+     *
      * @param CurlWrapperFactory $curlWrapperFactory
      * @return void
      */
