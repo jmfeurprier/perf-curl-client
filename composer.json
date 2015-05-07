@@ -1,5 +1,5 @@
 {
-	"name"        : "perf/http-curl",
+	"name"        : "perf/curl-client",
 	"type"        : "library",
 	"license"     : "MIT",
 	"description" : "Allows to execute cURL queries.",

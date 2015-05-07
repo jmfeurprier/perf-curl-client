@@ -6,7 +6,7 @@ namespace perf\Http\Curl;
  *
  *
  */
-class CurlExecuterBuilder
+class CurlClientBuilder
 {
 
     /**
@@ -20,7 +20,7 @@ class CurlExecuterBuilder
      *
      *
      * @param CurlWrapperFactory $factory
-     * @return CurlExecuterBuilder Fluent return.
+     * @return CurlClientBuilder Fluent return.
      */
     public function setCurlWrapperFactory(CurlWrapperFactory $factory)
     {
@@ -42,6 +42,6 @@ class CurlExecuterBuilder
             $curlWrapperFactory = new CurlWrapperFactory();
         }
 
-        return new CurlExecuter($curlWrapperFactory);
+        return new CurlClient($curlWrapperFactory);
     }
 }

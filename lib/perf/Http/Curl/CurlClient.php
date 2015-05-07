@@ -6,7 +6,7 @@ namespace perf\Http\Curl;
  *
  *
  */
-class CurlExecuter
+class CurlClient
 {
 
     /**
@@ -19,21 +19,21 @@ class CurlExecuter
     /**
      *
      *
-     * @return CurlExecuter
+     * @return CurlClient
      */
     public static function createDefault()
     {
-        return self::createBuilder()->build();
+        return static::createBuilder()->build();
     }
 
     /**
      *
      *
-     * @return CurlExecuterBuilder
+     * @return CurlClientBuilder
      */
     public static function createBuilder()
     {
-        return new CurlExecuterBuilder();
+        return new CurlClientBuilder();
     }
 
     /**
