@@ -32,16 +32,24 @@ class CurlClientBuilder
     /**
      *
      *
-     * @return HttpClient
+     * @return CurlClient
      */
     public function build()
     {
+        return new CurlClient($this->getCurlWrapperFactory());
+    }
+
+    /**
+     *
+     *
+     * @return CurlWrapperFactory
+     */
+    private function getCurlWrapperFactory()
+    {
         if ($this->curlWrapperFactory) {
-            $curlWrapperFactory = $this->curlWrapperFactory;
-        } else {
-            $curlWrapperFactory = new CurlWrapperFactory();
+            return $this->curlWrapperFactory;
         }
 
-        return new CurlClient($curlWrapperFactory);
+        return new CurlWrapperFactory();
     }
 }
