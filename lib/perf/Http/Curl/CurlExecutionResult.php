@@ -21,7 +21,7 @@ class CurlExecutionResult
      *
      * @var {string:mixed}
      */
-    private $info;
+    private $infos;
 
     /**
      * Constructor.
@@ -33,7 +33,7 @@ class CurlExecutionResult
     public function __construct($responseContent, CurlWrapper $curlWrapper)
     {
         $this->responseContent = $responseContent;
-        $this->info            = $curlWrapper->getInfo();
+        $this->infos           = $curlWrapper->getInfo();
     }
 
     /**
@@ -55,10 +55,20 @@ class CurlExecutionResult
      */
     public function getInfo($option)
     {
-        if (array_key_exists($option, $this->info)) {
-            return $this->info[$option];
+        if (array_key_exists($option, $this->infos)) {
+            return $this->infos[$option];
         }
 
         throw new \DomainException("Option {$option} not found.");
+    }
+
+    /**
+     * Get all informations regarding a specific transfer.
+     *
+     * @return {string:mixed}
+     */
+    public function getInfos()
+    {
+        return $this->infos;
     }
 }
