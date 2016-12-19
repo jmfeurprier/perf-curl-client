@@ -1,4 +1,4 @@
 cURL client
 ===========
 
-cURL client package from perf, the PHP Extensible and Robust Framework.
+This package allows to execute cURL-related operations.

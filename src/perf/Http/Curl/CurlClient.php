@@ -40,11 +40,23 @@ class CurlClient
      *
      *
      * @param CurlWrapperFactory $curlWrapperFactory
-     * @return void
      */
     public function __construct(CurlWrapperFactory $curlWrapperFactory)
     {
         $this->curlWrapperFactory = $curlWrapperFactory;
+    }
+
+    /**
+     *
+     *
+     * @param string $filename
+     * @param string $mimeType
+     * @param string $postFilename
+     * @return \CURLFile
+     */
+    public function createFile($filename, $mimeType = '', $postFilename = '')
+    {
+        return new \CURLFile($filename, $mimeType, $postFilename);
     }
 
     /**
